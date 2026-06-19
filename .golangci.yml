@@ -23,6 +23,15 @@ linters:
   - unconvert
   - unparam
   - unused
+  exclusions:
+    rules:
+    # Don't require doc comments on every exported identifier or package.
+    - linters:
+      - revive
+      text: should have comment or be unexported
+    - linters:
+      - revive
+      text: should have a package comment
   settings:
     depguard:
       rules:
@@ -60,6 +69,7 @@ linters:
       - wrapperFunc
       - importShadow # not important for now
       - unnamedResult # not important
+      - hugeParam # strategies use value receivers to satisfy interfaces; run-once CLI, perf irrelevant
     gocyclo:
       min-complexity: 15
     govet:

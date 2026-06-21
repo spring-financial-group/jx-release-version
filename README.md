@@ -1,4 +1,4 @@
-# Jenkins X Release Version
+# JayeX Release Version
 
 **This is a simple and standalone binary that can be used in CD pipelines to calculate the next release version**.
 
